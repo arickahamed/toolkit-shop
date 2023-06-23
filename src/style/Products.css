@@ -1,0 +1,56 @@
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    box-shadow: 2px 2px 15px lightgray;
+    width: 70vw;
+    margin: 1rem auto;
+    padding: 0.5rem;
+}
+
+.card img {
+    margin: 0 auto;
+    margin-bottom: 5px;
+    height: 80px;
+    display: block;
+}
+
+.card button {
+    display: block;
+    padding: 5px 8px;
+    margin: 15px auto;
+    font-weight: 700;
+    background-color: rgb(243, 201, 122);
+    border: 1px solid rgb(71, 49, 8);
+    border-radius: 3px;
+}
+
+/* for tablet */
+@media (min-width: 800px) {
+    .card {
+        width: 30vw;
+        margin: 1.5rem auto;
+        padding: 0.5rem;
+    }
+
+    .card img {
+        margin: 0 auto;
+        margin-bottom: 5px;
+        height: 100px;
+        display: block;
+    }
+}
+
+/* for monitor  */
+@media (min-width: 1000px) {
+    .card {
+        width: 20vw;
+        margin: 1.5rem;
+        padding: 0.5rem 1rem;
+    }
+}

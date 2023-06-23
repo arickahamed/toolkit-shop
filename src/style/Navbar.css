@@ -1,0 +1,72 @@
+.navbar {
+    background-color: rgb(243, 201, 122);
+    display: flex;
+    padding: 1rem 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.2rem;
+    justify-content: space-between;
+}
+
+.navbar-nav {
+    width: 30vw;
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: black;
+}
+
+.active {
+    border-bottom: 2.5px solid black;
+    font-size: 1.8rem;
+}
+
+.cart-length {
+    letter-spacing: -2px;
+    position: absolute;
+    top: 0;
+    right: 11%;
+}
+
+/* for tablet screen */
+@media (min-width: 700px) {
+    .navbar {
+        display: flex;
+        padding: 1rem 2rem;
+        font-size: 1.5rem;
+        font-weight: 700;
+        letter-spacing: 0.2rem;
+        justify-content: space-between;
+    }
+
+    .navbar-nav {
+        width: 20vw;
+        display: flex;
+        justify-content: space-around;
+    }
+}
+
+/* for monitor screen */
+@media (min-width: 1000px) {
+    .navbar {
+        display: flex;
+        padding: 1rem 5rem;
+        font-size: 1.5rem;
+        font-weight: 700;
+        letter-spacing: 0.2rem;
+        justify-content: space-between;
+    }
+
+    .navbar-nav {
+        width: 10vw;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .cart-length {
+        right: 7.5%;
+    }
+}

@@ -1,0 +1,12 @@
+.footer {
+    padding: 1.5rem 0;
+    margin: 0 auto;
+    background-color: rgb(248, 230, 207);
+    text-align: center;
+}
+
+.footer a {
+    text-decoration: none;
+    font-weight: bold;
+    color: brown;
+}
