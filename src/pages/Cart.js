@@ -10,6 +10,7 @@ const Cart = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch();
   const products = useSelector(state => state.cart.cartItems);
+  console.log(products);
   const totalPrice = useSelector(state => state.cart.totalPrice);
   const handleRemove = (productId) => {
     dispatch(remove(productId))
@@ -25,10 +26,11 @@ const Cart = () => {
           products.map(product => (
             <>
               <div className='cart-card'>
+                
                 <img src={product.image} alt={product.title} />
                 <div className="title-price">
                   <h5>price: {product.price}</h5>
-                  <h5>Price: {product.price}</h5>
+                  <h5>Quantity: {product.quantity}</h5>
                 </div>
                 <button className='remove' onClick={()=>handleRemove(product)}>Remove</button>
               </div>
