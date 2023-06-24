@@ -6,6 +6,7 @@
     font-weight: 700;
     letter-spacing: 0.2rem;
     justify-content: space-between;
+    /* border: 1px solid red; */
 }
 
 .navbar-nav {

@@ -1,8 +1,15 @@
 .layout {
+    width: 100vw;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     margin: auto;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    margin-bottom: 1rem;
 }
 
 main {

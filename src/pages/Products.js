@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import LoaderComponent from '../components/LoaderComponent';
 import { add, addAllProducts } from "../store/cartSlice";
 import "../style/Products.css";
 
@@ -13,6 +15,7 @@ const Products = () => {
   }
   const handleAdd = (product) => {
     dispatch(add(product));
+    toast("Product added to cart!")
   }
 
   useEffect(() => {
@@ -26,19 +29,27 @@ const Products = () => {
     fetchProducts();
   }, []);
   return (
-    <div className='products'>
-      {
-        products.map(product => (
-          <div className="card" key={product.id}>
-            <div onClick={()=> handleProductDetail(product.id)}>
-            <img src={product.image} alt="" />
-            <h4>{product.title}</h4>
-            <h5>Price: {product.price}</h5>
+    <div>
+      {products.length === 0 ? (
+        <div className="loader">
+          <LoaderComponent />
+        </div>
+      ) : (
+        <div  className='products'>
+        {
+          products.map(product => (
+            <div className="card" key={product.id}>
+              <div onClick={()=> handleProductDetail(product.id)}>
+              <img src={product.image} alt="" />
+              <h4>{product.title}</h4>
+              <h5>Price: {product.price}</h5>
+              </div>
+              <button onClick={()=> handleAdd(product)}>Add To Cart</button>
             </div>
-            <button onClick={()=> handleAdd(product)}>Add To Cart</button>
-          </div>
-        ))
-      }
+          ))
+        }
+        </div>
+      )}
     </div>
   )
 }

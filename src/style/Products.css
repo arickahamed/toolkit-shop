@@ -1,3 +1,12 @@
+.loader {
+    width: 90vw;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(223, 174, 83);
+}
+
 .products {
     display: flex;
     flex-wrap: wrap;

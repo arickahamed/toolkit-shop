@@ -6,7 +6,7 @@ const cartSlice = createSlice({
         allProducts: [],
         cartItems: [],
         uniqueQuantity: 0,
-        allQuantity: 0,
+        uniquePrice: 0,
         totalPrice: 0,
     },
     reducers: {
@@ -19,13 +19,13 @@ const cartSlice = createSlice({
                 state.cartItems.push({...action.payload, quantity: 1})
                 state.uniqueQuantity += 1;
             }
-            state.allQuantity ++;
             state.totalPrice += action.payload.price;
         },
         remove(state, action) {
-            const removeItem = state.cartItems.filter((item) => item.id !== action.payload);
+            const removeItem = state.cartItems.filter((item) => item.id !== action.payload.id);
             state.cartItems = removeItem;
             state.uniqueQuantity --;
+            state.totalPrice -= action.payload.price;
         },
     },
 });
