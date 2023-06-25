@@ -3,14 +3,14 @@ import { BiHomeAlt2 } from 'react-icons/bi';
 import { BsCart2 } from 'react-icons/bs';
 import { HiOutlineUserCircle } from 'react-icons/hi';
 import { useSelector } from 'react-redux';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import "../style/Navbar.css";
 
 const Navbar = () => {
   const items = useSelector((state) => state.cart);
   return (
     <div className='navbar'>
-      <span className='logo'>Toolkit-Shop</span>
+      <Link to="/" className='logo'>Toolkit-Shop</Link>
       <div className='navbar-nav'>
           <NavLink className='nav-link' to="/">
             <BiHomeAlt2 />
