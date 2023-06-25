@@ -8,7 +8,6 @@ import "../style/Navbar.css";
 
 const Navbar = () => {
   const items = useSelector((state) => state.cart);
-  // console.log(items.uniqueQuantity);
   return (
     <div className='navbar'>
       <span className='logo'>Toolkit-Shop</span>
@@ -17,7 +16,7 @@ const Navbar = () => {
             <BiHomeAlt2 />
           </NavLink>
           <NavLink className='nav-link cart-icon' to="/cart">
-            <BsCart2 /><span className='cart-length'>{items.uniqueQuantity}</span>
+            <BsCart2 /><span className='cart-length'>{items.uniqueQuantity > 0 ? items.uniqueQuantity : ""}</span>
           </NavLink>
           <NavLink className='nav-link' to="/profile">
             <HiOutlineUserCircle />
