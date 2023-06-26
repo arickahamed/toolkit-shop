@@ -17,13 +17,14 @@ const Navbar = () => {
   // console.log(JSON.parse(localStorage.getItem('token')));
   const name = localStorage.getItem("name");
   const token = localStorage.getItem("token");
+  console.log(localStorage);
 
   const handleSignOut = () => {
     signOut(auth).then(() => {
       localStorage.removeItem("token");
       localStorage.removeItem("name");
       toast.success("Logged Out Successfully");
-      navigate("/profile");
+      navigate("/");
     }).catch((error) => {
       console.log(error);
     })
