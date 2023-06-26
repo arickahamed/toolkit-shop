@@ -3,6 +3,7 @@ import { MdAdd, MdRemove } from "react-icons/md";
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux/es/hooks/useSelector';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import Layout from '../components/Layout';
 import { add, remove } from '../store/cartSlice';
 import "../style/Cart.css";
@@ -15,9 +16,11 @@ const Cart = () => {
   const totalPrice = useSelector(state => state.cart.totalPrice);
   const handleAdd = (productId) => {
     dispatch(add(productId))
+    toast.success("Product Added Successfully!");
   }
   const handleRemove = (productId) => {
     dispatch(remove(productId))
+    toast.success("Removed From Cart!");
   }
   const handleCartInfo = (productId) => {
     navigate(`/productDetail/${productId}`)

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import Layout from '../components/Layout';
 import { add } from "../store/cartSlice";
 import "../style/ProductDetail.css";
@@ -16,6 +17,7 @@ const ProductDetail = () => {
     navigate("/");
   }
   const handleAddToCart = (product) => {
+    toast.success("Product Added Successfully!");
     navigate("/");
     dispatch(add(product))
   }
