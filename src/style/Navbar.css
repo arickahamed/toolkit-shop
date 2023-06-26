@@ -9,6 +9,11 @@
     /* border: 1px solid red; */
 }
 
+.logo-user .user-name {
+    font-size: small;
+    text-align: center;
+}
+
 .logo {
     color: black;
     text-decoration: none;
