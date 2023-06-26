@@ -20,7 +20,7 @@ const Cart = () => {
   }
   const handleRemove = (productId) => {
     dispatch(remove(productId))
-    toast.success("Removed From Cart!");
+    toast.warning("Removed From Cart!");
   }
   const handleCartInfo = (productId) => {
     navigate(`/productDetail/${productId}`)
